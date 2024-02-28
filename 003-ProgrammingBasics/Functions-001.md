@@ -1,4 +1,4 @@
-# Interactions
+# Functions
 
 ## Themen
 
