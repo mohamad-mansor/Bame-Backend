@@ -4,7 +4,7 @@ import {
   GetUserController,
   PostUserController,
   PutUserController,
-} from "../controllers/userController.js";
+} from "../controllers/UserController.js";
 
 export const UserRouter = Router();
 

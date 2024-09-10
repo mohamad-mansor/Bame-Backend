@@ -6,7 +6,10 @@ import {
 } from "./db/connection.db.js";
 import { config } from "dotenv";
 import { UserRouter } from "./routes/userRoutes.js";
+import { GameRouter } from "./routes/GameRoutes.js";
 
+// dotenv
+config();
 const app = express();
 
 // Datenbank
@@ -14,11 +17,14 @@ mongoDCListener();
 mongoErrorListener();
 await mongoConnect();
 
-// dotenv
-config();
-
 // Connection Fehlt
 // Errorhandler einbinden
+app.use("/game", GameRouter);
+app.use("/user", UserRouter);
+
+app.listen(3000, () => {
+  console.log("Server is started on Port 3000");
+});
 
 // Endpoints
 // user (get, post, update, delete)
@@ -48,9 +54,3 @@ config();
 
 // Note
 //mysql2 installieren
-
-app.use("/user", UserRouter);
-
-app.listen(3000, () => {
-  console.log("Server is started on Port 3000");
-});
