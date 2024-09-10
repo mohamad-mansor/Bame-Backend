@@ -8,11 +8,11 @@ import { config } from "dotenv";
 const app = express();
 
 // Datenbank
-await mongoConnect();
-mongoErrorListener();
 mongoDCListener();
+mongoErrorListener();
+await mongoConnect();
 
-// dotenv 
+// dotenv
 config();
 
 // Connection Fehlt

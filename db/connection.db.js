@@ -1,24 +1,26 @@
+import { config } from "dotenv";
 import mongoose from "mongoose";
+config();
 
 export async function mongoConnect() {
   try {
     await mongoose.connect(process.env.CONNECTION_STRING, {
-      dbName: "games_db",
+      dbName: "VideoGame-backend",
     });
-    console.log("MongoDB connected successfully");
+    console.log("Connection zu MongoDB erfolgreich");
   } catch (error) {
-    console.error("MongoDB connection error:", error);
+    console.log(error);
   }
 }
 
 export function mongoErrorListener() {
-    mongoose.connection.on("error", (err) => {
-      console.log(err);
-    });
+  mongoose.connection.on("error", (err) => {
+    console.log(err);
+  });
 }
-  
+
 export function mongoDCListener() {
-    mongoose.connection.on("disconnected", (err) => {
-      console.log(err);
-    });
+  mongoose.connection.on("disconnected", (err) => {
+    console.log(err);
+  });
 }
