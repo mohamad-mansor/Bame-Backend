@@ -5,6 +5,8 @@ import {
   mongoErrorListener,
 } from "./db/connection.db.js";
 import { config } from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
+
 const app = express();
 
 // Datenbank
@@ -46,6 +48,8 @@ config();
 
 // Note
 //mysql2 installieren
+
+app.use("/user", userRoutes);
 
 app.listen(3000, () => {
   console.log("Server is started on Port 3000");
