@@ -7,9 +7,9 @@ import {
 const app = express();
 
 // Datenbank
-mongoConnect;
-mongoErrorListener;
-mongoDCListener;
+await mongoConnect();
+mongoErrorListener();
+mongoDCListener();
 
 // Connection Fehlt
 // Errorhandler einbinden
