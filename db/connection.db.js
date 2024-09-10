@@ -10,15 +10,3 @@ export async function mongoConnect() {
     console.error("MongoDB connection error:", error);
   }
 }
-
-export function mongoErrorListener() {
-    mongoose.connection.on("error", (err) => {
-      console.log(err);
-    });
-  }
-  
-export function mongoDCListener() {
-    mongoose.connection.on("disconnected", (err) => {
-      console.log(err);
-    });
-}

@@ -1,12 +1,15 @@
 import express from "express";
-import { mongoConnect, mongoDCListener, mongoErrorListener } from "./db/connection.db.js";
+import {
+  mongoConnect,
+  mongoDCListener,
+  mongoErrorListener,
+} from "./db/connection.db.js";
 const app = express();
 
-
 // Datenbank
-mongoConnect
-mongoErrorListener
-mongoDCListener
+mongoConnect;
+mongoErrorListener;
+mongoDCListener;
 
 // Connection Fehlt
 // Errorhandler einbinden
