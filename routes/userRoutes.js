@@ -1,9 +1,14 @@
 import { Router } from "express";
-UserC;
+import {
+  DeleteGameController,
+  GetGameController,
+  PostGameController,
+  PutGameController,
+} from "../controllers/GameController.js";
 
-router.get("/", userController.getUser);
-router.post("/", userController.createUser);
-router.put("/", userController.updateUser);
-router.delete("/", userController.deleteUser);
+export const GameRouter = Router();
 
-module.exports = router;
+GameRouter.get("/", GetGameController);
+GameRouter.post("/", PostGameController);
+GameRouter.put("/", PutGameController);
+GameRouter.delete("/", DeleteGameController);
