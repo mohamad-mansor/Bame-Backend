@@ -1,6 +1,9 @@
 import express from "express";
 const app = express();
 
+// Connection Fehlt
+// Errorhandler einbinden
+
 // Endpoints
 // user (get, post, update, delete)
 // game (get, post, update, delete)
