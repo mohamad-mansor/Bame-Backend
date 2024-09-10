@@ -1,6 +1,6 @@
-const users = [];
+let users = [];
 
-exports.getUser = (req, res) => {
+export const getUser = (req, res) => {
   const userId = req.params.id;
   if (userId) {
     const user = users.find((u) => u.id === parseInt(userId));
@@ -14,7 +14,7 @@ exports.getUser = (req, res) => {
   }
 };
 
-exports.createUser = (req, res) => {
+export const createUser = (req, res) => {
   const newUser = {
     id: users.length + 1,
     ...req.body,
@@ -23,7 +23,7 @@ exports.createUser = (req, res) => {
   res.status(201).json(newUser);
 };
 
-exports.updateUser = (req, res) => {
+export const updateUser = (req, res) => {
   const userId = parseInt(req.params.id);
   const userIndex = users.findIndex((u) => u.id === userId);
   if (userIndex !== -1) {
@@ -34,7 +34,7 @@ exports.updateUser = (req, res) => {
   }
 };
 
-exports.deleteUser = (req, res) => {
+export const deleteUser = (req, res) => {
   const userId = parseInt(req.params.id);
   const userIndex = users.findIndex((u) => u.id === userId);
   if (userIndex !== -1) {
