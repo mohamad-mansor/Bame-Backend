@@ -2,8 +2,8 @@ import express from "express";
 const app = express();
 
 // Endpoints
-// user (get, post, update, delete)
-// game (get, post, update, delete)
+// /user (get, post, update, delete) - Mohamad
+// /game (get, post, update, delete) - Ayhem
 
 //MySQL Datenbank
 /*  Spalte User 
@@ -14,18 +14,23 @@ const app = express();
       - csrf
       - role
 
-    Spalte Games
-      - title
-      - release
-      - Genre
-      - price
-      - publisher
-      - developer
+    Spalte Games x
+      - title x
+      - Genre x 
+      - price x
+      - age x
+      - publisher x 
+      - developer x
+      - buyers x
 
 */
 
+// Model Anlegen
+// User-Model - Edgard
+// Games-Model - Markus
+
 //Datenbank Verbindung
-// Herstellen der Verbindung
+// Herstellen der Verbindung - // Patrick
 
 // Note
 //mysql2 installieren
