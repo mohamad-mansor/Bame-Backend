@@ -4,12 +4,16 @@ import {
   mongoDCListener,
   mongoErrorListener,
 } from "./db/connection.db.js";
+import { config } from "dotenv";
 const app = express();
 
 // Datenbank
 await mongoConnect();
 mongoErrorListener();
 mongoDCListener();
+
+// dotenv 
+config();
 
 // Connection Fehlt
 // Errorhandler einbinden
