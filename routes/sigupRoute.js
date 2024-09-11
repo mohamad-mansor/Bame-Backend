@@ -8,15 +8,11 @@ app.post('/signup', async (req, res) => {
     if (!username || !email || !password) {
         return res.status(400).json({ message: 'Username, Email, and Password are required.' });
     }
-
     try {
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: 'User already exists.' });
         }
-
-        // Additional logic here (e.g., create a new user)
-
         return res.status(201).json({ message: 'User created successfully.' });
     } catch (error) {
         return res.status(500).json({ message: 'An error occurred.', error: error.message });
