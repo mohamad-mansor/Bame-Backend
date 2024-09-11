@@ -45,18 +45,18 @@ Middlewares
 
 #### User
 
-- [ ] user (GET) -: Ayhem
+- [x] user (GET) -: Ayhem
 
   - userid
 
-- [ ] user (PUT) -: Ayhem
+- [x] user (PUT) -: Ayhem
 
   - email
   - password
   - username
   - tos
 
-- [ ] user (DELETE) -: Ayhem
+- [x] user (DELETE) -: Ayhem
   - userid
 
 #### Game

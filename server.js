@@ -17,6 +17,8 @@ mongoDCListener();
 mongoErrorListener();
 await mongoConnect();
 
+//App Middlewares
+
 // Connection Fehlt
 // Errorhandler einbinden
 app.use("/game", GameRouter);
