@@ -7,6 +7,7 @@ import {
 import { config } from "dotenv";
 import { UserRouter } from "./routes/userRoutes.js";
 import { GameRouter } from "./routes/GameRoutes.js";
+import { SignupRouter } from "./routes/sigupRoute.js";
 
 // dotenv
 config();
@@ -21,6 +22,7 @@ await mongoConnect();
 // Errorhandler einbinden
 app.use("/game", GameRouter);
 app.use("/user", UserRouter);
+app.use("/signup", SignupRouter);
 
 app.listen(3000, () => {
   console.log("Server is started on Port 3000");
