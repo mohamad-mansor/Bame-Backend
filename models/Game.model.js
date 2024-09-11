@@ -10,7 +10,6 @@ const GameSchema = new Schema({
     type: Number,
     required: true,
     min: 0,
-    // Add mindestprice (0)
   }, // Price of the game
   author: {
     type: Schema.Types.ObjectId,
@@ -30,8 +29,6 @@ const GameSchema = new Schema({
     required: true,
     min: 0,
     max: 21,
-    // Add mindestage (0)
-    // Add maxage (21)
   }, // Age restriction
 });
 
