@@ -91,7 +91,7 @@ Middlewares
 
 ### Models
 
-- [ ] Gamemodel anlegen - :Mohamad
+- [x] Gamemodel anlegen - :Mohamad
 
   - Author (Developer)
   - Spielename
@@ -100,7 +100,7 @@ Middlewares
   - Releasedate
   - Age (Ab wie viel Jahren ist das Spiel)
 
-- [ ] Usermodel: Eigenschaft csrf hinzufügen - :Mohamad
+- [x] Usermodel: Eigenschaft csrf hinzufügen - :Mohamad
 - [ ] Testdaten in DB anlegen (3 User, 3 Games) - :Mohamad
 
 <br>
