@@ -31,6 +31,7 @@ GameRouter.post(
 );
 GameRouter.put(
   "/",
+  check("gameid").notEmpty().withMessage("Id is required"),
   check("title").notEmpty().withMessage("Title is required."),
   check("author").notEmpty().withMessage("Author is required."),
   check("spielname").notEmpty().withMessage("Spielname is required."),
