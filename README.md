@@ -2,14 +2,15 @@
 
 Middlewares
 
-- [ ] JWT
-- [ ] CSRF
+- [ ] JWT -: Edgard
+- [ ] CSRF -:
 
 <br>
 
 ### Routes anlegen
 
 - [ ] /signup (POST) - :Patrick
+- [ ] /signin (POST) - :Patrick
 
 ### Routes GET
 
