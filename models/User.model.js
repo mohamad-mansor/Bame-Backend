@@ -23,14 +23,11 @@ export const UserSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'developer', 'admin'],
-    default: 'user',
+    enum: ["user", "developer", "admin"],
+    default: "user",
   },
   csrfToken: {
     type: String,
-    default: function () {
-      return crypto.randomBytes(24).toString('hex');
-    },
   },
   createdAt: {
     type: Date,
@@ -49,7 +46,6 @@ UserSchema.methods.toJSON = function () {
 UserSchema.methods.authenticate = async function (plainPassword) {
   return await bcrypt.compare(plainPassword, this.password);
 };
-
 
 UserSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
