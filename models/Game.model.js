@@ -9,6 +9,7 @@ const GameSchema = new Schema({
   price: {
     type: Number,
     required: true,
+    min: 0,
     // Add mindestprice (0)
   }, // Price of the game
   author: {
@@ -27,6 +28,8 @@ const GameSchema = new Schema({
   age: {
     type: Number,
     required: true,
+    min: 0,
+    max: 21,
     // Add mindestage (0)
     // Add maxage (21)
   }, // Age restriction
