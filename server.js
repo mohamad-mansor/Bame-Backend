@@ -9,6 +9,7 @@ import { UserRouter } from "./routes/userRoutes.js";
 import { GameRouter } from "./routes/GameRoutes.js";
 import { SignupRouter } from "./routes/sigupRoute.js";
 import createHttpError from "http-errors";
+import cookieParser from "cookie-parser";
 
 // dotenv
 config();
@@ -22,7 +23,7 @@ await mongoConnect();
 //App Middlewares
 app.use(json());
 //Cookieparser
-
+app.use(cookieParser());
 // Connection Fehlt
 // Errorhandler einbinden
 app.use("/game", GameRouter);
