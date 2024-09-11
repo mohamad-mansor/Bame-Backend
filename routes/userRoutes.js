@@ -1,35 +1,55 @@
 import { Router } from "express";
-import { body, param } from 'express-validator';
+import { check } from "express-validator";
 import {
   DeleteUserController,
   GetUserController,
-  PostUserController,
   PutUserController,
 } from "../controllers/UserController.js";
 
 export const UserRouter = Router();
 
-UserRouter.get("/", GetUserController);
-UserRouter.post("/", PostUserController);
-UserRouter.put("/", PutUserController);
-UserRouter.delete("/", DeleteUserController);
-
-UserRouter.put('/:userid', [
-  param('userid').isInt().withMessage('User ID'),
-  body('email').isEmail().withMessage('Email'),
-  body('password').isLength({ min: 8 }).withMessage('Password'),
-  body('username').isLength({ min: 3 }).withMessage('Username '),
-  body('tos').isBoolean().withMessage('')
-], PutUserController);
-
-UserRouter.get("/:userid", 
-  param('userid').isInt().withMessage('User ID'), 
+UserRouter.get(
+  "/",
+  check("userid")
+    .notEmpty()
+    .withMessage("userid is required")
+    .isNumeric()
+    .withMessage("Not a correct Format")
+    .trim(),
   GetUserController
-)
-// 
-UserRouter.delete('/:userid', 
-  param('userid').isInt().withMessage('User ID'),
-  DeleteUserController
 );
 
-export default UserRouter;
+UserRouter.put(
+  "/",
+  check("userid")
+    .notEmpty()
+    .withMessage("userid is required")
+    .isNumeric()
+    .withMessage("Not a correct Format")
+    .trim(),
+  check("email").isEmail().withMessage("This is not a valid email"),
+  check("password")
+    .matches(/^(?=.*[A-ZÄÖÜ])(?=.*\d)(?=.*[\W_])[^\s]{8,}$/)
+    .withMessage("No valid Password")
+    .trim(),
+  check("username")
+    .matches(/^[a-zA-ZäöüÄÖÜ0-9_-]{3,20}$/)
+    .withMessage("Username is not valid")
+    .trim(),
+  check("tos")
+    .isInt({ min: 0, max: 1 })
+    .withMessage("Not a valid state")
+    .trim(),
+  PutUserController
+);
+
+UserRouter.delete(
+  "/",
+  check("userid")
+    .notEmpty()
+    .withMessage("userid is required")
+    .isNumeric()
+    .withMessage("Not a correct Format")
+    .trim(),
+  DeleteUserController
+);
