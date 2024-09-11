@@ -5,6 +5,7 @@ import {
   GetUserController,
   PutUserController,
 } from "../controllers/UserController.js";
+import { checkValidator } from "../middlewares/Security/check.validator.js";
 
 export const UserRouter = Router();
 
@@ -16,6 +17,7 @@ UserRouter.get(
     .isNumeric()
     .withMessage("Not a correct Format")
     .trim(),
+  checkValidator,
   GetUserController
 );
 
@@ -40,6 +42,7 @@ UserRouter.put(
     .isInt({ min: 0, max: 1 })
     .withMessage("Not a valid state")
     .trim(),
+  checkValidator,
   PutUserController
 );
 
@@ -51,5 +54,6 @@ UserRouter.delete(
     .isNumeric()
     .withMessage("Not a correct Format")
     .trim(),
+  checkValidator,
   DeleteUserController
 );
